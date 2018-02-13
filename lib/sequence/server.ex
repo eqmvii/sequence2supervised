@@ -1,4 +1,6 @@
 # server.ex
+# ported / copied / pasted directly from the unsupervised version of this map
+# now imported and supervised by the supervisor
 
 defmodule Sequence.Server do
     use GenServer

@@ -11,7 +11,11 @@ defmodule Sequence2supervised.Application do
       # Starts a worker by calling: Sequence2supervised.Worker.start_link(arg)
       # {Sequence2supervised.Worker, arg},
       # inexplicably this works, and seems to send the proper initial argument
-      {Sequence.Server, 123}
+      %{
+        id: Sequence.Server,
+        start: {Sequence.Server, :start_link, [777]},
+        restart: :permanent
+      }
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
